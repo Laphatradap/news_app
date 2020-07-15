@@ -19,7 +19,7 @@ const Article = () => {
   };
   return (
     <div className="section-articles">
-      {!reduxArticles ? (
+      {!reduxArticles?.length ? (
         <div className="loader"> &nbsp;</div>
       ) : (
         <>{renderArticles()}</>
