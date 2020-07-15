@@ -1,5 +1,5 @@
 import axios from "axios";
-require("dotenv").config();
+const { REACT_APP_API_KEY } = process.env;
 
 export const articlesFetched = (articles) => {
   return {
@@ -12,7 +12,7 @@ export const fetchArticles = () => async (dispatch, getState) => {
   const articles = getState().articles;
   if (!articles.length) {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/everything?q=football&from=2020-07-09&sortBy=publishedAt&apiKey=${process.env.REACT_APP_API_KEY}
+      const response = await axios.get(`https://newsapi.org/v2/everything?q=football&from=2020-07-09&sortBy=publishedAt&apiKey=${REACT_APP_API_KEY}
       `);
       dispatch(articlesFetched(response.data.articles));
     } catch (error) {
