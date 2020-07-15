@@ -17,7 +17,15 @@ const Article = () => {
       <ArticleCard key={index} {...article} />
     ));
   };
-  return <div>{renderArticles()}</div>;
+  return (
+    <div className="section-articles">
+      {!reduxArticles ? (
+        <div className="loader"> &nbsp;</div>
+      ) : (
+        <>{renderArticles()}</>
+      )}
+    </div>
+  );
 };
 
 export default Article;

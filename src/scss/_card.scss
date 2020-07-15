@@ -1,0 +1,37 @@
+.container {
+  max-width: $content-width;
+  margin: 8rem auto;
+}
+
+.section-articles {
+  display: grid;
+  grid-gap: 5rem;
+  grid-template-columns: repeat(auto-fill, minmax(34rem, 1fr));
+}
+
+.article__card {
+  height: 70rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+}
+
+.article-info {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2rem;
+  flex: 0 0 100%;
+
+  &__title,
+  &__description,
+  &__publishedAt,
+  &__author {
+    flex: 0 0 100%;
+  }
+}
+
+.article-image {
+  object-fit: cover;
+  width: 100%;
+  height: 50%;
+}

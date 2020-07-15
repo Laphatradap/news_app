@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.css";
+import "./scss/main.css";
+
 import Article from "./components/Article/ArticleCardsContainer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Article />
     </div>
   );
