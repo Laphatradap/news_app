@@ -7,11 +7,11 @@ const ArticleCard = (props) => {
     <>
       <div className="article__card">
         <div className="article-info">
-          {!urlToImage ? (
-            <img className="article-image" src={noImage} alt="item not found" />
-          ) : (
-            <img className="article-image" src={urlToImage} alt="news" />
-          )}
+          <img
+            className="article-image"
+            src={urlToImage || noImage}
+            alt="news"
+          />
           <div className="article-info__title heading-primary">{title}</div>
           {!author ? (
             <div className="article-info__author heading-secondary">
