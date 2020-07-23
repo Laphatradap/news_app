@@ -13,18 +13,18 @@ const Article = () => {
   }, [dispatch]);
 
   const renderArticles = () => {
-    return reduxArticles.map((article, index) => (
-      <ArticleCard key={index} {...article} />
+    return reduxArticles.map((article) => (
+      <ArticleCard key={article.title} {...article} />
     ));
   };
   return (
-    <div className="section-articles">
+    <section className="section-articles">
       {!reduxArticles?.length ? (
         <div className="loader"> &nbsp;</div>
       ) : (
-        <>{renderArticles()}</>
+        renderArticles()
       )}
-    </div>
+    </section>
   );
 };
 
